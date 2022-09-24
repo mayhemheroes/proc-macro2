@@ -540,6 +540,14 @@ impl Span {
         }
     }
 
+    #[cfg(super_unstable)]
+    pub fn source_text(&self) -> Option<String> {
+        match self {
+            Span::Compiler(s) => s.source_text(),
+            Span::Fallback(s) => s.source_text(),
+        }
+    }
+
     fn unwrap_nightly(self) -> proc_macro::Span {
         match self {
             Span::Compiler(s) => s,
