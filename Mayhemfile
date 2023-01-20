@@ -1,0 +1,6 @@
+image: tngo04/proc-macro2:latest
+project: tngo04/proc-macro2
+target: parse_token_stream
+
+cmds:
+  - cmd: /parse_token_stream
